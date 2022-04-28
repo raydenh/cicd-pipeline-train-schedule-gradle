@@ -14,9 +14,9 @@ pipeline {
             }
             steps {
                 script {
-                    app = docker.build("<DOCKER_HUB_USERNAME>/train-schedule")
+                    app = docker.build("jsabater/train-schedule")
                     app.inside {
-                        sh 'echo $(curl localhost:8080)'
+                        sh 'echo $(curl localhost:3000)'
                     }
                 }
             }
